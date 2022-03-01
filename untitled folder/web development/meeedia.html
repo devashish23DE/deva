@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        background-color: crimson;
+        text-align: center;
+        font-size: 72px;
+      }
+      @media (max-width: 300px) {
+        #fir {
+          display: block;
+          background-color: cyan;
+        }
+        @media (max-width: 600px) and (min-width:301px) {
+        #sec {
+          display: block;
+          background-color: cyan;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fir" class="item">first</div>
+
+    <div id="sec" class="item">second hu me</div>
+
+    <div id="thi" class="item">thjird hu me</div>
+
+    <div id="for" class="item">forth hu me</div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0px;
+  padding: 0px;
+}
+ body{
+  margin: 0px 150px;
+}
+#con {
+  background-color: rgba(221, 39, 54, 0.98);
+  height: 200px;
+}
+#con h2 {
+  padding: 50px;
+  text-align: center;
+  color: rgb(133, 17, 17);
+}
+#con input {
+  border: 0px;
+  width: 60%;
+  margin: 0px 0px 0px 100px;
+  height: 14px;
+  padding: 7px 0px;
+}
+#yo{
+  width: 10%;
+  color: white;
+  border: 0px;
+  padding: 6.5px;
+  background-color: rgba(238, 108, 34, 0.98);
+}
+#delete {
+  border: 0px;
+  width: 10%;
+  padding: 6.5px;
+  background-color: rgba(223, 101, 45, 0.98);
+  border-left: 4px dotted black;
+  color: white;
+}
+#yo,
+#delete,
+#title {
+  float: left;
+  margin: auto;
+}
+#list {
+  width: 80%;
+  min-height: 0px;
+  margin: 0px 100px 0px 100px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="con">
+        <h2>My To Do List</h2>
+        <input type="text" value="" placeholder="Title" id="title" />
+        <button id="yo" onclick="item_add()">Add Task</button>
+        <button id="delete">Delete Task</button>
+      </div>
+  
+      <div id="list"></div>
+      <script>
+          
+var input = document.getElementById("title");
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    document.getElementById("add_item").click();
+  }
+});
+
+
+function item_add() {
+  let newelement = document.createElement("h4");
+  let element_value = document.getElementById("title").value;
+  let newtext = document.createTextNode(element_value);
+  newelement.appendChild(newtext);
+  let targetelement = document.getElementById("list");
+  targetelement.insertBefore(newelement, targetelement.childNodes[0]);
+  let blankk = "";
+  document.getElementById("title").value = blankk;
+}
+
+
+document.getElementById("delete").addEventListener("click", () => {
+  let targetele = document.getElementById("list");
+  let oldele = targetele.children[0];
+  targetele.removeChild(oldele);
+});
+      </script>
+    
+</body>
+</html>
+
+
